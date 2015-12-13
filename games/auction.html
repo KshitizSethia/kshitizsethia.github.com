@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="web.css">
+<script type="text/javascript" src="scripts/main.js"></script>
+<!-- <script data-main="app" src="lib/require.js"></script> -->
+</head>
+<body onload="onLoad();">
+	<h1>Auction Game</h1>
+	<div id="popup"></div>
+	<div id="instructions">
+		<h2>Instructions for Auction</h2>
+		<ul>
+			<li>This is a closed auction.</li>
+			<li>A player wins if they have secure the requisite amount of
+				items of a type.</li>
+			<li>Number of items of a type required to win can be set.</li>
+			<li>Add players in the box to the right, set number of items to
+				win, hit "Start Auction".</li>
+		</ul>
+	</div>
+	<div id="mainWindow">
+		<div id="bids">
+			<h2>Auction Status</h2>
+			<table id="itemsTable" border=1px; width=90% align="center">
+				<thead>
+					<th>Index</th>
+					<th>Item</th>
+					<th>Won By</th>
+					<th>Winning Amount</th>
+				</thead>
+			</table>
+		</div>
+		<div id="current_bid">
+			<h2>Item up for bid!</h2>
+			<img class="image" id="bidImage" alt="No Item!" src="img/empty.png">
+		</div>
+		<div id="player_status">
+			<h2>Player Status</h2>
+			<table id="playerTable" border=1px width=90% align="center">
+			</table>
+		</div>
+	</div>
+	<div id="sidebar">
+		<h2 style="color: white">Player Console</h2>
+		<fieldset>
+			<table id="player_console">
+			</table>
+			<input id="initial_player_name" placeholder="New Player Name"
+				onkeydown="handlePlayerNameKeyPress(event)"></input> <input
+				type="button" value="Create" onclick="createHumanPlayer()"
+				id="button_createHumanPlayer" />
+			<p>Controls:
+			<ul>
+				<li>"Enter" to add player and place bid.</li>
+				<li>"Ctrl + Enter" to start Auction</li>
+			</ul>
+			</p>
+		</fieldset>
+		<!--<tr> <input
+			type="button" value="Create Bot Player" onclick="createBotPlayer()"
+			disabled id="button_createBotPlayer" /> </tr>-->
+		<fieldset>
+			Winning Score: <input id="winningScore" value="5" width="10"></input>
+			<input type="button" value="Start Auction" onclick="startAuction()"
+				id="button_startAuction" />
+		</fieldset>
+		<fieldset>
+			<input type="button" value="Reset" onclick="onLoad()"
+				id="button_reset" />
+		</fieldset>
+	</div>
+</body>
+</html>
