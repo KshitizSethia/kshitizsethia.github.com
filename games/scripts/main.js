@@ -39,7 +39,7 @@ function onLoad() {
 	document.getElementById("button_createHumanPlayer").disabled = false;
 	document.getElementById("initial_player_name").disabled = false;
 	document.getElementById("player_console").innerHTML = "";
-	//document.getElementById("mainWindow").style.visibility = "hidden";
+	document.getElementById("mainWindow").style.visibility = "hidden";
 	document.getElementById("instructions").style.display = "block";
 	document.getElementById("winningScore").value = 2;
 	document.getElementById("winningScore").disabled = false;
